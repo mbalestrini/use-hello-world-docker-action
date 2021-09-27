@@ -13,8 +13,8 @@ jobs:
       - name: upload render output
         uses: actions/upload-artifact@v2
         with:
-                name: render_out.png
-                path: $GITHUB_WORKSPACE/saludo.txt
+                name: output_file.txt
+                path: saludo.txt
 
       # Use the output from the `hello` step
       - name: Get the output time
