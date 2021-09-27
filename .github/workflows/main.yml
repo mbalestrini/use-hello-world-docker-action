@@ -13,7 +13,7 @@ jobs:
         id: hello
         uses: mbalestrini/hello-world-docker-action@v4
         with:
-          who-to-greet: 'Pedro'
+          who-to-greet: 'Maximo'
 
       - name: upload render output
         uses: actions/upload-artifact@v2
