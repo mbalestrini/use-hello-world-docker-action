@@ -7,15 +7,19 @@ jobs:
     steps:
       - name: Hello world action step
         id: hello
-        uses: mbalestrini/hello-world-docker-action@v2
+        uses: mbalestrini/hello-world-docker-action@v3
         with:
           who-to-greet: 'Pedro'
       - name: upload render output
         uses: actions/upload-artifact@v2
         with:
                 name: render_out.png
-                path: /tmp/0001.png
+                path: ${{ env.GITHUB_WORKSPACE }}/saludo.txt
 
       # Use the output from the `hello` step
       - name: Get the output time
         run: echo "The time was ${{ steps.hello.outputs.time }}"
+
+      - name: Echo contents of the docker generated file
+        run: cat $GITHUB_WORKSPACE/saludo.txt
+
