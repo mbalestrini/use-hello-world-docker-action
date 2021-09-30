@@ -12,9 +12,9 @@ jobs:
                 
       - name: Start the blender docker
         id: blender_docker
-        uses: mbalestrini/blender-render-action@master
+        uses: mbalestrini/run-blender@master
         with:
-          file-to-render: 'test.blend'
+          file-to-load: 'test.blend'
           blender-extra-args: -P some_blender_script.py
 
       - name: upload render output
