@@ -1,6 +1,29 @@
 on: [push]
 
 jobs:
+  render_job:
+    runs-on: ubuntu-latest
+    name: Test render in blender
+    steps:
+      - uses: actions/checkout@v2
+        with:
+                persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+                fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+                
+      - name: Start the blender docker
+        id: blender_docker
+        uses: mbalestrini/blender-render-action@main
+        with:
+          file-to-render: 'test.blend'
+
+      - name: upload render output
+        uses: actions/upload-artifact@v2
+        with:
+                name: test.jpg
+                path: test.jpg
+
+      
+
   hello_world_job:
     runs-on: ubuntu-latest
     name: A job to say hello
