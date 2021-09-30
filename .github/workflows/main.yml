@@ -12,7 +12,7 @@ jobs:
                 
       - name: Start the blender docker
         id: blender_docker
-        uses: mbalestrini/run-blender@master
+        uses: mbalestrini/run-blender-action@master
         with:
           file-to-load: 'test.blend'
           blender-extra-args: -P some_blender_script.py
