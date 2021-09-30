@@ -20,8 +20,8 @@ jobs:
       - name: upload render output
         uses: actions/upload-artifact@v2
         with:
-                name: test.jpg
-                path: test.jpg
+                name: render_test.jpg
+                path: render_test.jpg
 
       
 
