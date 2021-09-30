@@ -15,12 +15,13 @@ jobs:
         uses: mbalestrini/blender-render-action@master
         with:
           file-to-render: 'test.blend'
+          blender-extra-args: -P some_blender_script.py
 
       - name: upload render output
         uses: actions/upload-artifact@v2
         with:
-                name: test.jpg0001.png
-                path: test.jpg0001.png
+                name: test.jpg
+                path: test.jpg
 
       
 
