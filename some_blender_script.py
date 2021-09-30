@@ -10,7 +10,7 @@ filename = "./render_test.jpg"
 def executeRender(filename, render) : 
     render.image_settings.file_format = 'JPEG' #'PNG'
     render.use_file_extension
-    render.resolution_percentage = 0.25
+    render.resolution_percentage = 25
     render.use_file_extension = True
     render.filepath = filename
 
