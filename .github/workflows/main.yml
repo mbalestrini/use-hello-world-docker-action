@@ -12,7 +12,7 @@ jobs:
                 
       - name: Start the blender docker
         id: blender_docker
-        uses: mbalestrini/blender-render-action@main
+        uses: mbalestrini/blender-render-action@master
         with:
           file-to-render: 'test.blend'
 
